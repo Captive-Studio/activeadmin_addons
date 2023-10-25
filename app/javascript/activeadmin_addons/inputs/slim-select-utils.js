@@ -19,7 +19,7 @@ function parseObjectToQuery(obj, prefix) {
   return queryArray.join('&');
 }
 
-export function ransackSearch(search, currentData, settings) {
+export function (search, currentData, settings) {
   return new Promise((resolve, reject) => {
     if (search.length < settings.minimumInputLength) {
       reject(`Please enter ${settings.minimumInputLength} or more characters`);
@@ -32,6 +32,8 @@ export function ransackSearch(search, currentData, settings) {
         combinator: 'and',
       },
     };
+
+    console.log('COUCOU');
 
     const finalQuery = merge({}, defaultQuery, settings.query);
     const csrfTokenEl = document.querySelector('meta[name="csrf-token"]');
@@ -59,7 +61,7 @@ export function ransackSearch(search, currentData, settings) {
           }
 
           return {
-            value: resource.id,
+            value: resource[settings.primaryKey],
             text: resource[settings.displayName],
           };
         });

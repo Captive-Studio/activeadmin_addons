@@ -14,8 +14,9 @@ function settings(el) {
   const responseRoot = el.dataset.responseRoot;
   const minimumInputLength = el.dataset.minimumInputLength;
   const order = el.dataset.order;
+  const primaryKey = el.dataset.primaryKey;
 
-  const args = { url, fields, predicate, displayName, responseRoot, minimumInputLength, order };
+  const args = { url, fields, predicate, displayName, responseRoot, minimumInputLength, order, primaryKey };
 
   return {
     settings: {

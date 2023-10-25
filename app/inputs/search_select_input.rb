@@ -26,5 +26,6 @@ class SearchSelectInput < ActiveAdminAddons::SelectInputBase
       value: @options[:order_by],
       default: "#{get_data_attr_value(:fields).first}_desc"
     )
+    load_data_attr(:primary_key, default: "id")
   end
 end

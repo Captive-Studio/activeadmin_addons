@@ -29,6 +29,7 @@ class NestedLevelInput < ActiveAdminAddons::SelectInputBase
     load_data_attr(:order,
                    value: @options[:order_by],
                    default: "#{get_data_attr_value(:fields).first}_desc")
+    load_data_attr(:primary_key, default: "id")
     load_parent_data_options
     load_collection_data
   end
